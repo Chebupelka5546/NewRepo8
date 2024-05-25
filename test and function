@@ -1,0 +1,21 @@
+#include "pch.h"
+#include <vector>
+
+std::vector<int> Function(std::vector<int> numbers, int number) {
+  for (int i = 0; i < numbers.size(); ++i) {
+    numbers[i] *= number;
+  }
+  return numbers;
+}
+
+TEST(TestCaseName, TestName) {
+  std::vector<int> vct1;
+  vct1.push_back(1);
+  vct1.push_back(2);
+  std::vector<int> vct2;
+  vct2.push_back(3);
+  vct2.push_back(6);
+
+  ASSERT_TRUE(Function(vct1, 3) == vct2);
+  ASSERT_FALSE(Function(vct2, 2) == vct1);
+}
